@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612042355) do
+ActiveRecord::Schema.define(:version => 20130612044653) do
+
+  create_table "repairs", :force => true do |t|
+    t.text     "repair_type"
+    t.text     "notes"
+    t.string   "mechanic"
+    t.integer  "cost"
+    t.date     "date"
+    t.integer  "mileage"
+    t.integer  "vehicle_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -28,5 +40,15 @@ ActiveRecord::Schema.define(:version => 20130612042355) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "vehicles", :force => true do |t|
+    t.string   "make"
+    t.string   "model"
+    t.integer  "year"
+    t.integer  "mileage"
+    t.date     "purchased_on"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
 end

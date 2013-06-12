@@ -2,7 +2,10 @@ VehicleMaintenanceSite::Application.routes.draw do
 
   devise_for :users
 
-  root to: "home#index"
+  root to: "vehicles#index"
+
+  resources :vehicles, only: [:new, :index]
+  resources :repairs, only: [:new, :index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
