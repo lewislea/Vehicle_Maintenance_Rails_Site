@@ -4,8 +4,11 @@ VehicleMaintenanceSite::Application.routes.draw do
 
   root to: "vehicles#index"
 
-  resources :vehicles, only: [:new, :index]
-  resources :repairs, only: [:new, :index]
+  resources :vehicles, only: [:new, :index] do
+    resources :repairs, only: [:new, :index]
+  end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
