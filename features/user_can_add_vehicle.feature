@@ -11,7 +11,7 @@ Scenario: Happy Path
     And I fill in "4Runner" for "Model"
     And I fill in "2003" for "Year"
     And I fill in "123,643" for "Mileage"
-    And I fill in "6-1-2010" for "Purchased on"
+    And I fill out the date fields
     When I press "Add Vehicle"
     Then I should see "Your vehicle has been added!"
 
@@ -22,7 +22,7 @@ Scenario: Blank Form Field
     And I fill in "4Runner" for "Model"
     And I fill in "" for "Year"
     And I fill in "45,667" for "Mileage"
-    And I fill in "6-1-2010" for "Purchased on"
+    And I fill out the date fields
     When I press "Add Vehicle"
     Then I should see "Year can't be blank"
 
@@ -33,6 +33,6 @@ Scenario: Incorrect Type of Input
     And I fill in "4Runner" for "Model"
     And I fill in "bdhs" for "Year"
     And I fill in "123,643" for "Mileage"
-    And I fill in "6-1-2010" for "Purchased on"
-    When I press "Add Vehicle"
+    And I fill out the date fields
+`    When I press "Add Vehicle"
     Then I should see "Year is not a number"
