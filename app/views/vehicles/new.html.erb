@@ -1,0 +1,14 @@
+<h1>Add a Vehicle</h1>
+<%= form_for @vehicle do |f| %>
+  <%= f.label :make %>
+  <%= f.text_field :make %><br/>
+  <%= f.label :model %>
+  <%= f.text_field :model %><br/>
+  <%= f.label :year %>
+  <%= f.text_field :year %><br/>
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %><br/>
+  <%= f.label :purchased_on %>
+  <%= f.text_field :purchased_on %><br/>
+  <%= f.submit "Add Vehicle" %>
+<% end %>
