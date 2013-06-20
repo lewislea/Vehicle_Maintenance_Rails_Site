@@ -3,7 +3,8 @@
 
 ##Purpose
 ------
-This is a rails site that is being built as a capstone project for Nashville Software School.
+June 12, 2013
+This is a site that is being built as a capstone project for Nashville Software School.  We have been working in Rails for about 2 weeks and our charge is to build a simple, full featured web appliation using Ruby on Rails.
 
 ##Features
 ------
@@ -11,10 +12,14 @@ This is a rails site that is being built as a capstone project for Nashville Sof
 2. user can add repairs to vehicles
 3. user can upload notes or pictures about each repair
 4. user can track total maintenance cost for each vehicle
+5. search for vehicles and repairs
 
 ##Changelog
 -----
 6-12-13 :  began project
+6-14-13 : add devise for user authentication
+6-16-13 : user authentication working and tested
+6-20-13 : add vehicle feature working and tested
 
 
 ##Project State
@@ -22,7 +27,10 @@ This is a rails site that is being built as a capstone project for Nashville Sof
 
 ####To Do
 ---
--
+- ability to edit and delete vehicle
+- ability to add, edit, delete repairs
+- implement search functionality
+- add styling and layout (move beyond functionality and make it pretty)
 
 ####Completed
 ----
@@ -30,6 +38,11 @@ This is a rails site that is being built as a capstone project for Nashville Sof
 - create new rails project
 - create models and migration
 - create controller & views
+- install devise
+- form validation
+- vehicles can be added to database
+- cucumber tests for user authentication passing
+- cucumber tests for adding vehicles passing
 
 
 ##Author
