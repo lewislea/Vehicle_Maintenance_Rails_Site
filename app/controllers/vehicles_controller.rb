@@ -7,7 +7,7 @@ class VehiclesController < ApplicationController
   def index
     if Vehicle.any?
       all_vehicles = Vehicle.where(:user_id => current_user.id)
-      all_vehicles.each_with_index do |veh|
+      all_vehicles.each do |veh|
       "year: #{veh.year} make: #{veh.make} model: #{veh.model} mileage: #{veh.mileage}"
     end
     else

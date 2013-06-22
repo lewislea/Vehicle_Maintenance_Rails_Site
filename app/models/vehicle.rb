@@ -13,8 +13,4 @@ class Vehicle < ActiveRecord::Base
     self.mileage = self.mileage.to_s.gsub(/,/, '').to_f
   end
 
-   def strip_commas_from_mileage
-    self.mileage = self.mileage.to_s.gsub(/,/, '').to_f
-  end
-
 end
