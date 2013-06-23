@@ -1,11 +1,11 @@
 VehicleMaintenanceSite::Application.routes.draw do
 
-  devise_for :users
+  root to: "home#index"
 
-  root to: "vehicles#index"
+  devise_for :users, :path_names => {  }
 
-  resources :vehicles, only: [:new, :index] do
-    resources :repairs, only: [:new, :index]
+  resources :vehicles do
+    resources :repairs, only: [:new, :index, :delete, :edit]
   end
 
 
