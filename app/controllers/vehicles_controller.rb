@@ -6,14 +6,7 @@ class VehiclesController < ApplicationController
   end
 
   def index
-    # if Vehicle.any?
-      @all_vehicles = Vehicle.where(:user_id => current_user.id)
-      # @all_vehicles.each do |veh|
-      # "year: #{veh.year} make: #{veh.make} model: #{veh.model} mileage: #{veh.mileage}"
-      # end
-    # else
-    #   "You have no vehicles"
-    # end
+    @all_vehicles = Vehicle.where(:user_id => current_user.id)
   end
 
   def create
@@ -23,7 +16,7 @@ class VehiclesController < ApplicationController
       flash[:notice] = "Your vehicle has been added!"
       redirect_to vehicles_path
     else
-      flash[:notice] = "#{@vehicle.errors.full_messages.join(", ")}"
+      flash.now[:notice] = "#{@vehicle.errors.full_messages.join(", ")}"
       render 'new' and return
     end
   end
@@ -39,13 +32,19 @@ class VehiclesController < ApplicationController
       flash[:notice] = "Your vehicle has been updated!"
       redirect_to vehicles_path
     else
-      flash[:notice] = "#{@vehicle.errors.full_messages.join(", ")}"
+      flash.now[:notice] = "#{@vehicle.errors.full_messages.join(", ")}"
       render 'edit' and return
     end
   end
 
-  def show
+  def destroy
+    @vehicle = Vehicle.find(params[:id])
+    @vehicle.destroy
+    redirect_to vehicles_path
   end
 
+  def show
+    @vehicle = Vehicle.find(params[:id])
+  end
 
 end

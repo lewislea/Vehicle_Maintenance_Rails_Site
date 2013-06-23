@@ -1,7 +1,12 @@
-<%= link_to "Add Vehicle", new_vehicle_path %>
 <h2>a list of your vehicles</h2>
 <% @all_vehicles.each do |vehicle| %>
 <%= "Make: #{vehicle.make}, Model: #{vehicle.make}, Year: #{vehicle.year},
 Mileage: #{vehicle.mileage}, Purchased On: #{vehicle.purchased_on}" %>
-<%= link_to "Edit Vehicle", edit_vehicle_path("#{vehicle.id}") %><br/>
+<%= link_to "Edit Vehicle", edit_vehicle_path("#{vehicle.id}") %>
+<%= link_to "View Repairs", vehicle_path("#{vehicle.id}") %><br/>
 <% end %>
+<% if @all_vehicles.empty? %>
+<p>No Vehicles Added</p>
+<% end %>
+<%= link_to "Add Vehicle", new_vehicle_path %>
+
