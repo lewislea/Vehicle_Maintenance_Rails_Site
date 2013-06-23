@@ -1,7 +1,7 @@
 <%= link_to "Add Vehicle", new_vehicle_path %>
 <h2>a list of your vehicles</h2>
-<% user_vehicles = Vehicle.where(:user_id => current_user.id) %>
-<% user_vehicles.each do |vehicle| %>
-<%= "Make: #{vehicle.make} Model: #{vehicle.make} Year: #{vehicle.year}
-Purchased On: #{vehicle.purchased_on}" %><br/>
+<% @all_vehicles.each do |vehicle| %>
+<%= "Make: #{vehicle.make}, Model: #{vehicle.make}, Year: #{vehicle.year},
+Mileage: #{vehicle.mileage}, Purchased On: #{vehicle.purchased_on}" %>
+<%= link_to "Edit Vehicle", edit_vehicle_path("#{vehicle.id}") %><br/>
 <% end %>

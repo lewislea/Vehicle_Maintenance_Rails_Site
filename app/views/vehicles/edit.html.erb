@@ -1,0 +1,15 @@
+<h1>type the new info into the fields you would like to change<br/>
+do not modify other fields</h1>
+<%= form_for @vehicle do |f| %>
+  <%= f.label :make %>
+  <%= f.text_field :make %><br/>
+  <%= f.label :model %>
+  <%= f.text_field :model %><br/>
+  <%= f.label :year %>
+  <%= f.text_field :year %><br/>
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %><br/>
+  <%= f.label :purchased_on %>
+  <%= f.date_select :purchased_on, :start_year => 1990, :end_year => 2013 %><br/>
+  <%= f.submit "Save Changes" %>
+<% end %>
