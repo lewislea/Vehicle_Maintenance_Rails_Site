@@ -1,5 +1,9 @@
 <h3><%= "Make: #{@vehicle.make}, Model: #{@vehicle.make}, Year: #{@vehicle.year},
 Mileage: #{@vehicle.mileage}, Purchased On: #{@vehicle.purchased_on}" %></h3>
+
+<%= render :partial => 'shared/repair_index' %>
+
+<%= link_to "Add Repair", new_vehicle_repair_path(@vehicle, @repair) %><br/>
 <%= link_to "Edit vehicle", edit_vehicle_path("#{@vehicle.id}") %><br/>
-<%= link_to "Delete vehicle", @vehicle ,:method => :delete, :confirm => "Are you sure you want to delete this vehicle?"  %><br/>
+<%= button_to "Delete vehicle", @vehicle ,:method => :delete, :confirm => "Are you sure you want to delete this vehicle?"  %><br/>
 <%= link_to "Back to Vehicle List", vehicles_path %>
