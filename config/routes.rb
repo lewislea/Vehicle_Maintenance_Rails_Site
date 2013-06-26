@@ -5,7 +5,7 @@ VehicleMaintenanceSite::Application.routes.draw do
   devise_for :users, :path_names => {  }
 
   resources :vehicles do
-    resources :repairs, only: [:new, :index, :delete, :edit]
+    resources :repairs
   end
 
 
