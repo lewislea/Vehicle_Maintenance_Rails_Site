@@ -1,0 +1,15 @@
+<%= form_for [@vehicle, @repair] do |f| %>
+  <%= f.label :repair_type %>
+  <%= f.text_field :repair_type %><br/>
+  <%= f.label :mechanic %>
+  <%= f.text_field :mechanic %><br/>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %><br/>
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %><br/>
+  <%= f.label :date %>
+  <%= f.date_select :date, :end_year => 2013 %><br/>
+  <%= f.label :notes %><br/>
+  <%= f.text_area :notes %><br/>
+  <%= f.submit "Save" %>
+<% end %>

@@ -20,18 +20,19 @@ class RepairsController < ApplicationController
   end
 
   def edit
-    @vehicle.repair
-    # @repair = Repair.find(params[:vehicle][:repair][:id])
+    @vehicle = Vehicle.find(params[:vehicle_id])
+    @repair = Repair.find(params[:id])
   end
 
   def update
     params[:repair][:mileage] = params[:repair][:mileage].gsub(/\,/, '')
-    @repair = @vehicles.update(params[:id],params[:vehicle])
-    if @vehicle.save
-      flash[:notice] = "Your vehicle has been updated!"
-      redirect_to vehicles_path
+    @vehicle = Vehicle.find(params[:vehicle_id])
+    @repair = @vehicle.repairs.update(params[:id],params[:repair])
+    if @repair.save
+      flash[:notice] = "Your repair has been updated!"
+      redirect_to vehicle_path(@vehicle.id)
     else
-      flash.now[:notice] = "#{@vehicle.errors.full_messages.join(", ")}"
+      flash.now[:notice] = "#{@repair.errors.full_messages.join(", ")}"
       render 'edit' and return
     end
   end
