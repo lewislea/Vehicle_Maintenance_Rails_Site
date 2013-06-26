@@ -6,7 +6,6 @@ I want to log in
 Scenario: Happy Path
     Given the user "bob@example.com" with password "password1"
     When I go to the homepage
-    And I click "Sign In"
     And I fill in "bob@example.com" for "Email"
     And I fill in "password1" for "Password"
     And I press "Sign in"
@@ -16,7 +15,6 @@ Scenario: Happy Path
   Scenario: Wrong Password
     Given the user "bob@example.com" with password "password1"
     When I go to the homepage
-    And I click "Sign In"
     And I fill in "bob@example.com" for "Email"
     And I fill in "pa3355" for "Password"
     And I press "Sign in"
@@ -26,7 +24,6 @@ Scenario: Happy Path
   Scenario: Wrong Username
     Given the user "bob@example.com" with password "password1"
     When I go to the homepage
-    And I click "Sign In"
     And I fill in "bob@exae.com" for "Email"
     And I fill in "password1" for "Password"
     And I press "Sign in"

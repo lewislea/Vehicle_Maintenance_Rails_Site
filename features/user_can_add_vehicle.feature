@@ -12,7 +12,7 @@ Scenario: Happy Path
     And I fill in "2003" for "Year"
     And I fill in "123,643" for "Mileage"
     And I fill out the date fields
-    When I press "Add Vehicle"
+    When I press "Save"
     Then I should see "Your vehicle has been added!"
 
 Scenario: Blank Form Field
@@ -23,7 +23,7 @@ Scenario: Blank Form Field
     And I fill in "" for "Year"
     And I fill in "45,667" for "Mileage"
     And I fill out the date fields
-    When I press "Add Vehicle"
+    When I press "Save"
     Then I should see "Year can't be blank"
 
 Scenario: Incorrect Type of Input
@@ -34,7 +34,7 @@ Scenario: Incorrect Type of Input
     And I fill in "bdhs" for "Year"
     And I fill in "123,643" for "Mileage"
     And I fill out the date fields
-    When I press "Add Vehicle"
+    When I press "Save"
     Then I should see "Year is not a number"
 
 Scenario: Mileage Saved Correctly to Database
@@ -45,5 +45,5 @@ Scenario: Mileage Saved Correctly to Database
     And I fill in "2010" for "Year"
     And I fill in "123,643" for "Mileage"
     And I fill out the date fields
-    When I press "Add Vehicle"
+    When I press "Save"
     Then I should see "123643"
