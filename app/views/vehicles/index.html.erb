@@ -1,12 +1,26 @@
-<h2>a list of your vehicles</h2>
-<% @all_vehicles.each do |vehicle| %>
-<%= "Make: #{vehicle.make}, Model: #{vehicle.model}, Year: #{vehicle.year},
-Mileage: #{vehicle.mileage}, Purchased On: #{vehicle.purchased_on}" %>
-<%= link_to "Edit Vehicle", edit_vehicle_path("#{vehicle.id}") %>
-<%= link_to "Add/View Repairs", vehicle_path("#{vehicle.id}") %><br/>
+<h2 class = "span9">Your Vehicles</h2>
+<p class = "span9"><%= link_to "Add Vehicle", new_vehicle_path, class: "btn" %></p>
+<table class = "span9 table table-bordered table-hover">
+  <th>Make</th>
+  <th>Model</th>
+  <th>Year</th>
+  <th>Mileage</th>
+  <th>Date Purchased</th>
+  <th></th>
+  <th></th>
+  <% @all_vehicles.each do |vehicle| %>
+  <tr>
+    <td><%="#{vehicle.make}"%></td>
+    <td><%="#{vehicle.model}"%></td>
+    <td><%="#{vehicle.year}"%></td>
+    <td><%="#{vehicle.mileage}"%></td>
+    <td><%="#{vehicle.purchased_on}"%></td>
+    <td><%= link_to "Edit Vehicle", edit_vehicle_path("#{vehicle.id}"), class: "btn" %></td>
+    <td><%= link_to "Add/View Repairs", vehicle_path("#{vehicle.id}"), class: "btn" %></td>
 <% end %>
+  </tr>
 <% if @all_vehicles.empty? %>
 <p>No Vehicles Added</p>
 <% end %>
-<%= link_to "Add Vehicle", new_vehicle_path %>
+</table>
 
