@@ -9,12 +9,12 @@ class RepairsController < ApplicationController
   def create
     params[:repair][:mileage] = params[:repair][:mileage].gsub(/\,/, '')
     @vehicle = Vehicle.find(params[:vehicle_id])
-    @repair = @vehicle.repairs.create(params[:repair])
+    @repair = @vehicle.repairs.build(params[:repair])
     if @repair.save
       flash[:notice] = "Your repair has been added!"
       redirect_to vehicle_path(@vehicle)
     else
-      flash.now[:notice] = "#{@repair.errors.full_messages.join(", ")}"
+      flash.now[:notice] = "Your repair could not be added because 1 or more forms were invalid. Please try again."
       redirect_to new_vehicle_repair_path
     end
   end
