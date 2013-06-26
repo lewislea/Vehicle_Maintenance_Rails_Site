@@ -3,23 +3,25 @@
 
 ##Purpose
 ------
-June 12, 2013
-This is a site that is being built as a capstone project for Nashville Software School.  We have been working in Rails for about 2 weeks and our charge is to build a simple, full featured web appliation using Ruby on Rails.
+This is a site that is being built as a capstone project for Nashville Software School.  We have been working in Rails for about 4 weeks and our charge is to build a simple web appliation using Ruby on Rails and interacts with a Postgresqul database.
 
 ##Features
 ------
-1. user can add mulitple vehicles
+1. user can add mulitple vehicles to track
 2. user can add repairs to vehicles
-3. user can upload notes or pictures about each repair
 4. user can track total maintenance cost for each vehicle
-5. search for vehicles and repairs
 
 ##Changelog
 -----
-6-12-13 :  began project
+6-12-13 : began project
 6-14-13 : add devise for user authentication
 6-16-13 : user authentication working and tested
 6-20-13 : add vehicle feature working and tested
+6-23-13 : edit and delete vehicle working
+6-22-13 : add repair to vehicle
+6-23-13 : edit repair
+6-25-13 : styling and layout changes
+6-26-13 : delete repair
 
 
 ##Project State
@@ -27,10 +29,8 @@ This is a site that is being built as a capstone project for Nashville Software 
 
 ####To Do
 ---
-- ability to edit and delete vehicle
-- ability to add, edit, delete repairs
-- implement search functionality
-- add styling and layout (move beyond functionality and make it pretty)
+- check routes and UX
+- add styling and finalize layout
 
 ####Completed
 ----
@@ -43,6 +43,8 @@ This is a site that is being built as a capstone project for Nashville Software 
 - vehicles can be added to database
 - cucumber tests for user authentication passing
 - cucumber tests for adding vehicles passing
+- ability to edit and delete vehicle
+- ability to add, edit, delete repairs
 
 
 ##Author
