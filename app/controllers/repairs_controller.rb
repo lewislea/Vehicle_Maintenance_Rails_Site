@@ -42,6 +42,10 @@ class RepairsController < ApplicationController
   end
 
   def destroy
+    @vehicle = Vehicle.find(params[:vehicle_id])
+    @repair = Repair.find(params[:id])
+    @repair.destroy
+    redirect_to vehicle_path(@vehicle.id)
   end
 
   def index
