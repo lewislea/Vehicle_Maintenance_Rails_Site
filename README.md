@@ -22,6 +22,7 @@ This is a site that is being built as a capstone project for Nashville Software 
 6-23-13 : edit repair
 6-25-13 : styling and layout changes
 6-26-13 : delete repair
+6-27-13 : styling and layout changes
 
 
 ##Project State
@@ -29,8 +30,6 @@ This is a site that is being built as a capstone project for Nashville Software 
 
 ####To Do
 ---
-- check routes and UX
-- add styling and finalize layout
 
 ####Completed
 ----
@@ -45,6 +44,7 @@ This is a site that is being built as a capstone project for Nashville Software 
 - cucumber tests for adding vehicles passing
 - ability to edit and delete vehicle
 - ability to add, edit, delete repairs
+- add styling and finalize layout
 
 
 ##Author
