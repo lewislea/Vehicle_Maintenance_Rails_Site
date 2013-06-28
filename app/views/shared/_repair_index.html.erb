@@ -1,12 +1,13 @@
-
-  <table class = "span10 table table-hover table-bordered">
+<div class = "row">
+  <div class = "span10 offset1">
+  <table class = "table table-hover table-bordered">
   <th>Repair Type</th>
   <th>Cost</th>
   <th>Mechanic</th>
   <th>Date</th>
   <th>Mileage</th>
   <th>Notes</th>
-<% @vehicle.repairs.each do |repair| %>
+  <% @vehicle.repairs.each do |repair| %>
   <tr>
     <td><%="#{repair.repair_type}"%></td>
     <td><%="#{repair.cost}"%></td>
@@ -14,14 +15,16 @@
     <td><%="#{repair.date}"%></td>
     <td><%="#{repair.mileage}"%></td>
     <td><%="#{repair.notes}"%></td>
-    <td><%= link_to "Edit Repair", edit_vehicle_repair_path(@vehicle, repair.id) %></td>
-    <td><%= link_to "Delete Repair", vehicle_repair_path(@vehicle, repair.id), :method => :delete, :confirm => "Are you sure you want to delete this repair?"  %></td>
+    <td><%= link_to "Edit Repair", edit_vehicle_repair_path(@vehicle, repair.id), class: "btn" %></td>
+    <td><%= link_to "Delete Repair", vehicle_repair_path(@vehicle, repair.id), :method => :delete, :confirm => "Are you sure you want to delete this repair?", class: "btn btn-danger"  %></td>
   </tr>
-<% end %>
-</table>
+  <% end %>
+  </table>
+  </div>
+</div>
 
 <div class = "row">
-  <div class = "span4">
-<%= link_to "Add Repair", new_vehicle_repair_path(@vehicle, @repair), class: "btn" %>
+  <div class = "span4 offset1">
+<%= link_to "Add Repair", new_vehicle_repair_path(@vehicle, @repair), class: "btn btn-primary" %>
   </div>
 </div>

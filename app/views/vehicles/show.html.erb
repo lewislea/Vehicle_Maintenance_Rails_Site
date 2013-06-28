@@ -1,22 +1,15 @@
-
-<p><%= link_to "Back to Vehicle List", vehicles_path, class: "btn" %></p></br>
-
-<table class = "span9 table">
-  <th>Make</th>
-  <th>Model</th>
-  <th>Year</th>
-  <th>Mileage</th>
-  <th>Date Purchased</th>
-  <th></th>
-  <th></th>
-  <tr>
-    <td><%="#{@vehicle.make}"%></td>
-    <td><%="#{@vehicle.model}"%></td>
-    <td><%="#{@vehicle.year}"%></td>
-    <td><%="#{@vehicle.mileage}"%></td>
-    <td><%="#{@vehicle.purchased_on}"%></td>
-    <td><%= link_to "Delete vehicle", @vehicle ,:method => :delete, :confirm => "Are you sure you want to delete this vehicle?", class: "btn"  %></td>
-    <td><%= link_to "Edit vehicle", edit_vehicle_path("#{@vehicle.id}"), class: "btn" %></td>
-  </tr>
-
+<div class = "row">
+  <div class = "offset1 span4"
+  <p><%= link_to "Back to Vehicle List", vehicles_path, class: "btn" %></p>
+</div>
+</div>
+<div class = "row">
+  <div class = "offset1 span5 table">
+<table class = "table">
+  <th><h4><%="#{@vehicle.make}"%></h4></th>
+  <th><h4><%="#{@vehicle.model}"%></h4></th>
+  <th><h4><%="#{@vehicle.year}"%></h4></th>
+</table>
+</div>
+</div>
   <%= render :partial => 'shared/repair_index' %>
