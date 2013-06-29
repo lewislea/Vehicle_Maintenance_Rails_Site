@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
   <div class="navbar navbar-inverse">
@@ -25,6 +26,9 @@
         <%= link_to "Sign Up", new_user_registration_path %>
         <% end %>
       </li>
+      <% if user_signed_in? %>
+        <li> <%= link_to "My Account",edit_user_registration_path %></li>
+      <% end %>
     </ul>
   </div>
 </div

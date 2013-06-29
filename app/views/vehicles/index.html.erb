@@ -17,7 +17,7 @@
     <td><%="#{vehicle.purchased_on}"%></td>
     <td><%= link_to "Edit Vehicle", edit_vehicle_path("#{vehicle.id}"), class: "btn" %></td>
     <td><%= link_to "Add/View Repairs", vehicle_path("#{vehicle.id}"), class: "btn" %></td>
-    <td><%= link_to "Delete vehicle", @vehicle ,:method => :delete, :confirm => "Are you sure you want to delete this vehicle?", class: "btn btn-danger"  %></td>
+    <td><%= link_to "Delete vehicle", vehicle_path("#{vehicle.id}") ,:method => :delete, :confirm => "Are you sure you want to delete this vehicle?", class: "btn btn-danger"  %></td>
 <% end %>
   </tr>
 <% if @all_vehicles.empty? %>
